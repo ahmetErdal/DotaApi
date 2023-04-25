@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DotaMobilApi.HeroesPage">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <CollectionView ItemsSource="{Binding HeroesStats}" SelectionMode="Single">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid RowSpacing="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Frame Grid.Column="0" Grid.Row="0"
+                                   BorderColor="#f2f2f2"      
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"
+                                   CornerRadius="5">
+                                <Image Source="{Binding img,StringFormat='https://cdn.dota2.com{0}'} "/>
+                            </Frame>
+
+                            <Frame Grid.Column="0" Grid.Row="1"
+                                   BorderColor="#f2f2f2"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"
+                                   CornerRadius="5">
+                                <Label Text="{Binding localized_name}"/>
+                            </Frame>
+
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
